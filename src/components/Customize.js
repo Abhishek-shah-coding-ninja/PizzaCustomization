@@ -8,19 +8,18 @@ import Mushroom from "../assets/Mushroom.png";
 import Basil from "../assets/Basil.png";
 import Tomato from "../assets/Tomato.png";
 
-function Customize({ingredients , setIngredients}) {
-
-    const onChange = (event, name) => {
-        console.log(localStorage);
-        let newIngredients = JSON.parse(JSON.stringify(ingredients));
-        newIngredients[name] = event;
-        setIngredients(newIngredients);
-        localStorage.setItem("ingredients", JSON.stringify(newIngredients));
-      };
+function Customize({ ingredients, setIngredients }) {
+  const onChange = (event, name) => {
+    console.log(localStorage);
+    let newIngredients = JSON.parse(JSON.stringify(ingredients));
+    newIngredients[name] = event;
+    setIngredients(newIngredients);
+    localStorage.setItem("ingredients", JSON.stringify(newIngredients));
+  };
 
   return (
     <div style={{ display: "flex" }}>
-        {JSON.stringify(ingredients)}
+      {/* {JSON.stringify(ingredients)} */}
       <div style={{ border: "2px solid black", flex: 1 }}>
         <div style={{ maxHeight: 500, maxWidth: 500, position: "relative" }}>
           <img
@@ -69,7 +68,7 @@ function Customize({ingredients , setIngredients}) {
         </div>
       </div>
       <div style={{ border: "2px solid black", flex: 1 }}>
-      <label className="container-checkbox">
+        <label className="container-checkbox">
           Pineapple
           <input
             type="checkbox"
@@ -138,6 +137,7 @@ function Customize({ingredients , setIngredients}) {
           Proceed to Checkout
         </button> */}
       </div>
+      
     </div>
   );
 }
