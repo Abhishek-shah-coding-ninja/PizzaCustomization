@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Header from "./components/Header";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import Customize from "./components/Customize"
@@ -15,6 +15,14 @@ function App() {
     tomato: false,
 
   });
+
+  useEffect(() => {
+    const data = localStorage.getItem('ingredients ')
+    if (data) {
+      setIngredients(JSON.parse(data));
+    }
+  }, [])
+
   return (
     <div className="App">
       <Header />
